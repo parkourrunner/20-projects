@@ -7,9 +7,10 @@ import StarRating from './components/star-rating';
 import { useState } from 'react';
 import TreeView from './components/tree-view';
 import menus from './components/tree-view/data';
+import QRGenerator from './components/qr-generator';
 
 function App() {
-  const [app, setApp] = useState("TreeView");
+  const [app, setApp] = useState("QRGenerator");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -19,6 +20,7 @@ function App() {
         <button onClick={() => setApp("ImageSlider")}>ImageSlider</button>
         <button onClick={() => setApp("LoadMore")}>LoadMore</button>
         <button onClick={() => setApp("TreeView")}>TreeView</button>
+        <button onClick={() => setApp("QRGenerator")}>TreeView</button>
       </div>
       {app === "Accordion" && <Accordion />}
       {app === "RandomColor" && <RandomColor />}
@@ -26,6 +28,7 @@ function App() {
       {app === "ImageSlider" && <ImageSlider url={"https://picsum.photos/v2/list"} page={1} limit={5} />}
       {app === "LoadMore" && <LoadMore />}
       {app === "TreeView" && <TreeView menus={menus} />}
+      {app === "QRGenerator" && <QRGenerator menus={menus} />}
     </div>
   );
 }
