@@ -8,9 +8,10 @@ import { useState } from 'react';
 import TreeView from './components/tree-view';
 import menus from './components/tree-view/data';
 import QRGenerator from './components/qr-generator';
+import LightDarkMode from './components/dark-light-mode';
 
 function App() {
-  const [app, setApp] = useState("QRGenerator");
+  const [app, setApp] = useState("LightDarkMode");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -29,6 +30,7 @@ function App() {
       {app === "LoadMore" && <LoadMore />}
       {app === "TreeView" && <TreeView menus={menus} />}
       {app === "QRGenerator" && <QRGenerator menus={menus} />}
+      {app === "LightDarkMode" && <LightDarkMode/>}
     </div>
   );
 }
