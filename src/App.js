@@ -9,9 +9,10 @@ import TreeView from './components/tree-view';
 import menus from './components/tree-view/data';
 import QRGenerator from './components/qr-generator';
 import LightDarkMode from './components/dark-light-mode';
+import ScrollIndicator from './components/scroll-indicator';
 
 function App() {
-  const [app, setApp] = useState("LightDarkMode");
+  const [app, setApp] = useState("ScrollIndicator");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -31,6 +32,7 @@ function App() {
       {app === "TreeView" && <TreeView menus={menus} />}
       {app === "QRGenerator" && <QRGenerator menus={menus} />}
       {app === "LightDarkMode" && <LightDarkMode/>}
+      {app === "ScrollIndicator" && <ScrollIndicator url="https://dummyjson.com/products?limit=100"/>}
     </div>
   );
 }
