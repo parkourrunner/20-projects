@@ -10,9 +10,10 @@ import menus from './components/tree-view/data';
 import QRGenerator from './components/qr-generator';
 import LightDarkMode from './components/dark-light-mode';
 import ScrollIndicator from './components/scroll-indicator';
+import TabTest from './components/tabs';
 
 function App() {
-  const [app, setApp] = useState("ScrollIndicator");
+  const [app, setApp] = useState("TabTest");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -23,6 +24,7 @@ function App() {
         <button onClick={() => setApp("LoadMore")}>LoadMore</button>
         <button onClick={() => setApp("TreeView")}>TreeView</button>
         <button onClick={() => setApp("QRGenerator")}>TreeView</button>
+        <button onClick={() => setApp("TabTest")}>TabTest</button>
       </div>
       {app === "Accordion" && <Accordion />}
       {app === "RandomColor" && <RandomColor />}
@@ -33,6 +35,7 @@ function App() {
       {app === "QRGenerator" && <QRGenerator menus={menus} />}
       {app === "LightDarkMode" && <LightDarkMode/>}
       {app === "ScrollIndicator" && <ScrollIndicator url="https://dummyjson.com/products?limit=100"/>}
+      {app === "TabTest" && <TabTest/>}
     </div>
   );
 }
