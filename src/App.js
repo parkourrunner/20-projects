@@ -14,9 +14,10 @@ import TabTest from './components/tabs';
 import ModalTest from './components/modal-popup/modal-test';
 import GithubProfileFinder from './components/github-profile-finder';
 import Autocomplete from './components/autocomplete';
+import TicTacToe from './components/toc-tac-toe';
 
 function App() {
-  const [app, setApp] = useState("Autocomplete");
+  const [app, setApp] = useState("TicTacToe");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -31,6 +32,7 @@ function App() {
         <button onClick={() => setApp("ModalTest")}>ModalTest</button>
         <button onClick={() => setApp("GithubProfileFinder")}>GithubProfileFinder</button>
         <button onClick={() => setApp("Autocomplete")}>Autocomplete</button>
+        <button onClick={() => setApp("TicTacToe")}>TicTacToe</button>
       </div>
       {app === "Accordion" && <Accordion />}
       {app === "RandomColor" && <RandomColor />}
@@ -45,6 +47,7 @@ function App() {
       {app === "ModalTest" && <ModalTest/>}
       {app === "GithubProfileFinder" && <GithubProfileFinder/>}
       {app === "Autocomplete" && <Autocomplete/>}
+      {app === "TicTacToe" && <TicTacToe/>}
     </div>
   );
 }
