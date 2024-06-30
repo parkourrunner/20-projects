@@ -15,9 +15,11 @@ import ModalTest from './components/modal-popup/modal-test';
 import GithubProfileFinder from './components/github-profile-finder';
 import Autocomplete from './components/autocomplete';
 import TicTacToe from './components/toc-tac-toe';
+import FeatureFlags from './components/feature-flag';
+import FeatureFlagGlobalState from './components/feature-flag/context';
 
 function App() {
-  const [app, setApp] = useState("TicTacToe");
+  const [app, setApp] = useState("FeatureFlags");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -33,6 +35,7 @@ function App() {
         <button onClick={() => setApp("GithubProfileFinder")}>GithubProfileFinder</button>
         <button onClick={() => setApp("Autocomplete")}>Autocomplete</button>
         <button onClick={() => setApp("TicTacToe")}>TicTacToe</button>
+        <button onClick={() => setApp("FeatureFlags")}>FeatureFlags</button>
       </div>
       {app === "Accordion" && <Accordion />}
       {app === "RandomColor" && <RandomColor />}
@@ -41,13 +44,18 @@ function App() {
       {app === "LoadMore" && <LoadMore />}
       {app === "TreeView" && <TreeView menus={menus} />}
       {app === "QRGenerator" && <QRGenerator menus={menus} />}
-      {app === "LightDarkMode" && <LightDarkMode/>}
-      {app === "ScrollIndicator" && <ScrollIndicator url="https://dummyjson.com/products?limit=100"/>}
-      {app === "TabTest" && <TabTest/>}
-      {app === "ModalTest" && <ModalTest/>}
-      {app === "GithubProfileFinder" && <GithubProfileFinder/>}
-      {app === "Autocomplete" && <Autocomplete/>}
-      {app === "TicTacToe" && <TicTacToe/>}
+      {app === "LightDarkMode" && <LightDarkMode />}
+      {app === "ScrollIndicator" && <ScrollIndicator url="https://dummyjson.com/products?limit=100" />}
+      {app === "TabTest" && <TabTest />}
+      {app === "ModalTest" && <ModalTest />}
+      {app === "GithubProfileFinder" && <GithubProfileFinder />}
+      {app === "Autocomplete" && <Autocomplete />}
+      {app === "TicTacToe" && <TicTacToe />}
+      {app === "FeatureFlags" &&
+        <FeatureFlagGlobalState>
+          <FeatureFlags />
+        </FeatureFlagGlobalState>
+      }
     </div>
   );
 }

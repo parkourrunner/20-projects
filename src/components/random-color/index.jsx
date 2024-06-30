@@ -37,13 +37,13 @@ function RandomColor() {
             <button onClick={() => setColorType("rgb")}>Create RGB Color</button>
             <div>
                 <button onClick={() => handleCreateColor()}>Generate Random Color</button>
-            </div>
-            <div style={{
-                marginTop: "30%",
-                fontSize: "50px",
-                fontWeight: "bold"
-            }}>
-                {colorType} {color}
+                <div style={{
+                    marginTop: "50px",
+                    fontSize: "50px",
+                    fontWeight: "bold"
+                }}>
+                    {colorType} {color}
+                </div>
             </div>
         </div>
     )
