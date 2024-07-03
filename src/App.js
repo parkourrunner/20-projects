@@ -18,9 +18,10 @@ import TicTacToe from './components/toc-tac-toe';
 import FeatureFlags from './components/feature-flag';
 import FeatureFlagGlobalState from './components/feature-flag/context';
 import TestUseFetchHook from './components/use-fetch/test';
+import TestUseClickOutside from './components/use-outside-hook/test';
 
 function App() {
-  const [app, setApp] = useState("TestUseFetchHook");
+  const [app, setApp] = useState("TestUseClickOutside");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -38,6 +39,7 @@ function App() {
         <button onClick={() => setApp("TicTacToe")}>TicTacToe</button>
         <button onClick={() => setApp("FeatureFlags")}>FeatureFlags</button>
         <button onClick={() => setApp("TestUseFetchHook")}>TestUseFetchHook</button>
+        <button onClick={() => setApp("TestUseClickOutside")}>TestUseClickOutside</button>
       </div>
       {app === "Accordion" && <Accordion />}
       {app === "RandomColor" && <RandomColor />}
@@ -59,6 +61,7 @@ function App() {
         </FeatureFlagGlobalState>
       }
       {app === "TestUseFetchHook" && <TestUseFetchHook />}
+      {app === "TestUseClickOutside" && <TestUseClickOutside />}
     </div>
   );
 }
