@@ -19,9 +19,10 @@ import FeatureFlags from './components/feature-flag';
 import FeatureFlagGlobalState from './components/feature-flag/context';
 import TestUseFetchHook from './components/use-fetch/test';
 import TestUseClickOutside from './components/use-outside-hook/test';
+import TestUseWindowResize from './components/use-window-resize/test';
 
 function App() {
-  const [app, setApp] = useState("TestUseClickOutside");
+  const [app, setApp] = useState("TestUseWindowResize");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -40,6 +41,7 @@ function App() {
         <button onClick={() => setApp("FeatureFlags")}>FeatureFlags</button>
         <button onClick={() => setApp("TestUseFetchHook")}>TestUseFetchHook</button>
         <button onClick={() => setApp("TestUseClickOutside")}>TestUseClickOutside</button>
+        <button onClick={() => setApp("TestUseWindowResize")}>TestUseWindowResize</button>
       </div>
       {app === "Accordion" && <Accordion />}
       {app === "RandomColor" && <RandomColor />}
@@ -62,6 +64,7 @@ function App() {
       }
       {app === "TestUseFetchHook" && <TestUseFetchHook />}
       {app === "TestUseClickOutside" && <TestUseClickOutside />}
+      {app === "TestUseWindowResize" && <TestUseWindowResize />}
     </div>
   );
 }
