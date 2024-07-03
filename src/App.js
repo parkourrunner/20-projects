@@ -17,9 +17,10 @@ import Autocomplete from './components/autocomplete';
 import TicTacToe from './components/toc-tac-toe';
 import FeatureFlags from './components/feature-flag';
 import FeatureFlagGlobalState from './components/feature-flag/context';
+import TestUseFetchHook from './components/use-fetch/test';
 
 function App() {
-  const [app, setApp] = useState("FeatureFlags");
+  const [app, setApp] = useState("TestUseFetchHook");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -36,6 +37,7 @@ function App() {
         <button onClick={() => setApp("Autocomplete")}>Autocomplete</button>
         <button onClick={() => setApp("TicTacToe")}>TicTacToe</button>
         <button onClick={() => setApp("FeatureFlags")}>FeatureFlags</button>
+        <button onClick={() => setApp("TestUseFetchHook")}>TestUseFetchHook</button>
       </div>
       {app === "Accordion" && <Accordion />}
       {app === "RandomColor" && <RandomColor />}
@@ -56,6 +58,7 @@ function App() {
           <FeatureFlags />
         </FeatureFlagGlobalState>
       }
+      {app === "TestUseFetchHook" && <TestUseFetchHook />}
     </div>
   );
 }
