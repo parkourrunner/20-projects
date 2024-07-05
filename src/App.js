@@ -21,9 +21,10 @@ import TestUseFetchHook from './components/use-fetch/test';
 import TestUseClickOutside from './components/use-outside-hook/test';
 import TestUseWindowResize from './components/use-window-resize/test';
 import ScrollToTopAndBottom from './components/scroll-top-top-bottom';
+import ScrollToSection from './components/scroll-top-top-bottom/scroll-to-section';
 
 function App() {
-  const [app, setApp] = useState("ScrollToTopAndBottom");
+  const [app, setApp] = useState("ScrollToSection");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -43,7 +44,7 @@ function App() {
         <button onClick={() => setApp("TestUseFetchHook")}>TestUseFetchHook</button>
         <button onClick={() => setApp("TestUseClickOutside")}>TestUseClickOutside</button>
         <button onClick={() => setApp("TestUseWindowResize")}>TestUseWindowResize</button>
-        <button onClick={() => setApp("ScrollToTopAndBottom")}>ScrollToTopAndBottom</button>
+        <button onClick={() => setApp("ScrollToSection")}>ScrollToSection</button>
       </div>
       {app === "Accordion" && <Accordion />}
       {app === "RandomColor" && <RandomColor />}
@@ -68,6 +69,7 @@ function App() {
       {app === "TestUseClickOutside" && <TestUseClickOutside />}
       {app === "TestUseWindowResize" && <TestUseWindowResize />}
       {app === "ScrollToTopAndBottom" && <ScrollToTopAndBottom />}
+      {app === "ScrollToSection" && <ScrollToSection />}
     </div>
   );
 }
