@@ -20,9 +20,10 @@ import FeatureFlagGlobalState from './components/feature-flag/context';
 import TestUseFetchHook from './components/use-fetch/test';
 import TestUseClickOutside from './components/use-outside-hook/test';
 import TestUseWindowResize from './components/use-window-resize/test';
+import ScrollToTopAndBottom from './components/scroll-top-top-bottom';
 
 function App() {
-  const [app, setApp] = useState("TestUseWindowResize");
+  const [app, setApp] = useState("ScrollToTopAndBottom");
   return (
     <div className="App">
       <div className='app-selector'>
@@ -42,6 +43,7 @@ function App() {
         <button onClick={() => setApp("TestUseFetchHook")}>TestUseFetchHook</button>
         <button onClick={() => setApp("TestUseClickOutside")}>TestUseClickOutside</button>
         <button onClick={() => setApp("TestUseWindowResize")}>TestUseWindowResize</button>
+        <button onClick={() => setApp("ScrollToTopAndBottom")}>ScrollToTopAndBottom</button>
       </div>
       {app === "Accordion" && <Accordion />}
       {app === "RandomColor" && <RandomColor />}
@@ -65,6 +67,7 @@ function App() {
       {app === "TestUseFetchHook" && <TestUseFetchHook />}
       {app === "TestUseClickOutside" && <TestUseClickOutside />}
       {app === "TestUseWindowResize" && <TestUseWindowResize />}
+      {app === "ScrollToTopAndBottom" && <ScrollToTopAndBottom />}
     </div>
   );
 }
